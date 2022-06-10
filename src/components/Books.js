@@ -1,13 +1,13 @@
-import React from "react";
-import Book from "./Book";
-import AddBook from "./AddBook";
-import { v4 as uuidv4 } from "uuid";
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Book from './Book';
+import AddBook from './AddBook';
 
 const Books = () => {
   const books = [
     {
-      title: "Clean Code: A Handbook of Agile Software Craftsmanship",
-      author: "Robert C. Martin",
+      title: 'Clean Code: A Handbook of Agile Software Craftsmanship',
+      author: 'Robert C. Martin',
       id: uuidv4(),
     },
   ];
