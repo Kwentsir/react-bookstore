@@ -33,9 +33,9 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Joseph Kwesi Kwentsir**
 
-- GitHub: [@githubhandle](https://github.com/kwentsir)
-- Twitter: [@twitterhandle](https://twitter.com/jkwentsir)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/josephkwentsir)
+- GitHub: [@Kwentsir](https://github.com/kwentsir)
+- Twitter: [@jkwentsir](https://twitter.com/jkwentsir)
+- LinkedIn: [josephkwentsir](https://linkedin.com/in/josephkwentsir)
 
 ## 🤝 Contributing
 
