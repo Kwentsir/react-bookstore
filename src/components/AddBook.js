@@ -19,7 +19,7 @@ const AddBook = () => {
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         style={{
           marginRight: '1rem',
