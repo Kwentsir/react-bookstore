@@ -10,9 +10,9 @@ export const addBook = (book) => ({
   book,
 });
 
-export const deleteBook = (book) => ({
+export const deleteBook = (id) => ({
   type: DELETE_BOOK,
-  book,
+  id,
 });
 
 export default (state = initialState, action) => {
@@ -25,7 +25,7 @@ export default (state = initialState, action) => {
     case DELETE_BOOK:
       return {
         ...state,
-        books: state.books.filter((b) => b.id !== action.book.id),
+        books: state.books.filter((book) => book.id !== action.book.id),
       };
     default:
       return state;
