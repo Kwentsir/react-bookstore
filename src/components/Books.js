@@ -14,15 +14,14 @@ const Books = () => {
   const keys = Object.keys(books);
   return (
     <div>
-      {keys.length > 0
-        && keys.map((key) => (
-          <Book
-            key={key}
-            title={books[key][0].title}
-            author={books[key][0].author}
-            id={key}
-          />
-        ))}
+      {keys.length > 0 && keys.map((key) => (
+        <Book
+          key={key}
+          title={books[key][0].title}
+          author={books[key][0].author}
+          id={key}
+        />
+      ))}
       <AddBook />
     </div>
   );

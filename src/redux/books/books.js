@@ -1,10 +1,12 @@
 /* eslint-disable operator-linebreak,no-case-declarations */
 import axios from 'axios';
 
-const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/v7IhRJhfrFG2s3TBCjZ2/books';
-const FETCH_BOOKS = 'bookstore/books/DELETE_BOOK';
+const baseUrl =
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/v7IhRJhfrFG2s3TBCjZ2/books';
+
 const ADD_BOOK = 'react-bookstore/books/ADD_BOOK';
 const DELETE_BOOK = 'react-bookstore/books/DELETE_BOOK';
+const FETCH_BOOKS = 'react-bookstore/books/FETCH_BOOKS';
 
 const initialState = {
   books: {},
@@ -30,15 +32,16 @@ export const deleteBookAsync = (id) => async (dispatch) => {
 };
 
 export const postBook = (book) => async (dispatch) => {
-  try { await axios.post(baseUrl, book, {
-    headers: {
-      'content-Type': 'application/json',
-    },
-  });
-  dispatch(addBook(data));
-} catch (error){
-  throw new Error(error);
-}
+  try {
+    await axios.post(baseUrl, book, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    dispatch(addBook(book));
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 export const getBooks = () => async (dispatch) => {
