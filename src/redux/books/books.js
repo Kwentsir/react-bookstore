@@ -6,7 +6,7 @@ const ADD_BOOK = 'react-bookstore/books/ADD_BOOK';
 const DELETE_BOOK = 'react-bookstore/books/DELETE_BOOK';
 
 const initialState = {
-  books: [],
+  books: {},
 };
 
 export const addBook = (book) => ({
