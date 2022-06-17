@@ -9,12 +9,12 @@ const initialState = {
   books: {},
 };
 
-export const addBook = (book) => ({
+const addBook = (book) => ({
   type: ADD_BOOK,
   book,
 });
 
-export const deleteBook = (id) => ({
+const deleteBook = (id) => ({
   type: DELETE_BOOK,
   id,
 });
@@ -24,6 +24,18 @@ const fetchBooks = (books) =>({
   books,
 });
 
+export const deleteBookAsync = (id) => async (dispatch) => {
+  await axios.delete(`${baseUrl}/${id}`);
+  dispatch(deleteBook(id));
+};
+
+export const postBook = (book) => async (dispatch) => {
+  const {data} = await axios.post(baseUrl, book, {headers:{
+    "content-Type": "application/json"
+  },
+});
+dispatch(addBook(data));
+}
 export const getBooks = () => async (dispatch) => {
   const response = await axios.get(baseUrl);
   dispatch(fetchBooks(response.data));
@@ -34,12 +46,13 @@ export default (state = initialState, action) => {
     case ADD_BOOK:
       return {
         ...state,
-        books: [...state.books, action.book],
+        books: {...state.books, [action.book.id]:[action.book]},
       };
     case DELETE_BOOK:
+      const {[action.id]: deleted, ...rest} = state.books;
       return {
         ...state,
-        books: state.books.filter((book) => book.id !== action.book.id),
+        books: rest,
       };
       case FETCH_BOOKS:
         return {
