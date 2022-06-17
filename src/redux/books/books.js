@@ -21,14 +21,13 @@ export const deleteBook = (id) => ({
 
 const fetchBooks = (books) =>({
   type: FETCH_BOOKS,
-  id,
+  books,
 });
 
-export const getBooks = () => (dispatch) => {
-  axios.get(baseUrl).then((response) =>{dispatch(fetchBooks(response.data));
-  }).catch((error) =>{console.log(error);
-  });
-}
+export const getBooks = () => async (dispatch) => {
+  const response = await axios.get(baseUrl);
+  dispatch(fetchBooks(response.data));
+};
  
 export default (state = initialState, action) => {
   switch (action.type) {
