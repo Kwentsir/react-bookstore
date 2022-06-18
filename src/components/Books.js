@@ -13,7 +13,7 @@ const Books = () => {
 
   const keys = Object.keys(books);
   return (
-    <div>
+    <section className="books">
       {keys.length > 0 && keys.map((key) => (
         <Book
           key={key}
@@ -23,7 +23,7 @@ const Books = () => {
         />
       ))}
       <AddBook />
-    </div>
+    </section>
   );
 };
 

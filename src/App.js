@@ -1,6 +1,6 @@
 import { NavLink, Routes, Route } from 'react-router-dom';
 import React from 'react';
-import {IoIosPerson} from 'react-icons/io';
+import { IoIosPerson } from 'react-icons/io';
 import Books from './components/Books';
 import Categories from './components/Categories';
 

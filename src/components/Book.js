@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux/es/exports';
+import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import { deleteBookAsync } from '../redux/books/books';
 
 const Book = ({ title, author, id }) => {
   const dispatch = useDispatch();
 
-  const percentInteger = Math.floor(Math.random()*100);
+  const percentInteger = Math.floor(Math.random() * 100);
 
   return (
     <>
@@ -29,12 +30,15 @@ const Book = ({ title, author, id }) => {
             value={percentInteger}
             text=""
             styles={buildStyles({
-              pathColor: "#379cf6",
-              trailColor: "#f5f6fa",
+              pathColor: '#379cf6',
+              trailColor: '#f5f6fa',
             })}
           />
           <div className="progress__text">
-            <h5>{percentInteger}%</h5>
+            <h5>
+              {percentInteger}
+              %
+            </h5>
             <p>Completed</p>
           </div>
           <hr className="progress__rule" />

@@ -23,7 +23,7 @@ const AddBook = () => {
       <form onSubmit={handleSubmit}>
         <input
           style={{
-            marginRight: "1rem",
+            marginRight: '1rem',
           }}
           type="text"
           name="title"
@@ -32,7 +32,7 @@ const AddBook = () => {
           onChange={(e) => handleChange(e)}
         />
         <input
-          style={{ marginRight: "1rem" }}
+          style={{ marginRight: '1rem' }}
           name="author"
           type="text"
           placeholder="Type Author Name"
