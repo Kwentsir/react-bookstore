@@ -5,13 +5,46 @@ import { deleteBookAsync } from '../redux/books/books';
 
 const Book = ({ title, author, id }) => {
   const dispatch = useDispatch();
+
+  const percentInteger = Math.floor(Math.random()*100);
+
   return (
     <>
-      <h3>{title}</h3>
-      <p>{author}</p>
-      <button onClick={() => dispatch(deleteBookAsync(id))} type="button">
-        Remove
-      </button>
+      <article className="books__item">
+        <div className="header">
+          <h5>Action</h5>
+          <h3>{title}</h3>
+          <p>{author}</p>
+          <div>
+            <button type="button">Comments</button>
+            <button onClick={() => dispatch(deleteBookAsync(id))} type="button">
+              Remove
+            </button>
+            <button type="button">Edit</button>
+          </div>
+        </div>
+        <div className="progress">
+          <CircularProgressbar
+            className="progress__bar"
+            value={percentInteger}
+            text=""
+            styles={buildStyles({
+              pathColor: "#379cf6",
+              trailColor: "#f5f6fa",
+            })}
+          />
+          <div className="progress__text">
+            <h5>{percentInteger}%</h5>
+            <p>Completed</p>
+          </div>
+          <hr className="progress__rule" />
+        </div>
+        <div className="chapter">
+          <h6>CURRENT CHAPTER</h6>
+          <h4>Chapter 16</h4>
+          <button type="button">UPDATE PROGRESS</button>
+        </div>
+      </article>
     </>
   );
 };

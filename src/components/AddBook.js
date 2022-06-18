@@ -19,27 +19,29 @@ const AddBook = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        style={{
-          marginRight: '1rem',
-        }}
-        type="text"
-        name="title"
-        placeholder="Type Book Title Here"
-        value={form.title}
-        onChange={(e) => handleChange(e)}
-      />
-      <input
-        style={{ marginRight: '1rem' }}
-        name="author"
-        type="text"
-        placeholder="Type Author Name"
-        value={form.author}
-        onChange={(e) => handleChange(e)}
-      />
-      <button type="submit">Add Book</button>
-    </form>
+    <div className="add-book">
+      <form onSubmit={handleSubmit}>
+        <input
+          style={{
+            marginRight: "1rem",
+          }}
+          type="text"
+          name="title"
+          placeholder="Type Book Title Here"
+          value={form.title}
+          onChange={(e) => handleChange(e)}
+        />
+        <input
+          style={{ marginRight: "1rem" }}
+          name="author"
+          type="text"
+          placeholder="Type Author Name"
+          value={form.author}
+          onChange={(e) => handleChange(e)}
+        />
+        <button type="submit">Add Book</button>
+      </form>
+    </div>
   );
 };
 export default AddBook;
