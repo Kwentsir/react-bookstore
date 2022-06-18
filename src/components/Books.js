@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux/es/exports';
+import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
 import AddBook from './AddBook';
 import { getBooks } from '../redux/books/books';
@@ -13,7 +13,7 @@ const Books = () => {
 
   const keys = Object.keys(books);
   return (
-    <div>
+    <section className="books">
       {keys.length > 0 && keys.map((key) => (
         <Book
           key={key}
@@ -23,7 +23,7 @@ const Books = () => {
         />
       ))}
       <AddBook />
-    </div>
+    </section>
   );
 };
 
