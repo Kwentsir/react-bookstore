@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const baseUrl =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/v7IhRJhfrFG2s3TBCjZ2/books';
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/yczhKH02Nmk114disNJU/books';
 
 const ADD_BOOK = 'react-bookstore/books/ADD_BOOK';
 const DELETE_BOOK = 'react-bookstore/books/DELETE_BOOK';

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux/es/exports';
+import { useDispatch } from 'react-redux';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import { deleteBookAsync } from '../redux/books/books';
 
 const Book = ({ title, author, id }) => {
@@ -10,46 +11,44 @@ const Book = ({ title, author, id }) => {
   const percentInteger = Math.floor(Math.random() * 100);
 
   return (
-    <>
-      <article className="books__item">
-        <div className="header">
-          <h5>Action</h5>
-          <h3>{title}</h3>
-          <p>{author}</p>
-          <div>
-            <button type="button">Comments</button>
-            <button onClick={() => dispatch(deleteBookAsync(id))} type="button">
-              Remove
-            </button>
-            <button type="button">Edit</button>
-          </div>
+    <article className="books__item">
+      <div className="header">
+        <h5>Action</h5>
+        <h3>{title}</h3>
+        <p>{author}</p>
+        <div>
+          <button type="button">Comments</button>
+          <button onClick={() => dispatch(deleteBookAsync(id))} type="button">
+            Remove
+          </button>
+          <button type="button">Edit</button>
         </div>
-        <div className="progress">
-          <CircularProgressbar
-            className="progress__bar"
-            value={percentInteger}
-            text=""
-            styles={buildStyles({
-              pathColor: '#379cf6',
-              trailColor: '#f5f6fa',
-            })}
-          />
-          <div className="progress__text">
-            <h5>
-              {percentInteger}
-              %
-            </h5>
-            <p>Completed</p>
-          </div>
-          <hr className="progress__rule" />
+      </div>
+      <div className="progress">
+        <CircularProgressbar
+          className="progress__bar"
+          value={percentInteger}
+          text=""
+          styles={buildStyles({
+            pathColor: '#379cf6',
+            trailColor: '#f5f6fa',
+          })}
+        />
+        <div className="progress__text">
+          <h5>
+            {percentInteger}
+            %
+          </h5>
+          <p>Completed</p>
         </div>
-        <div className="chapter">
-          <h6>CURRENT CHAPTER</h6>
-          <h4>Chapter 16</h4>
-          <button type="button">UPDATE PROGRESS</button>
-        </div>
-      </article>
-    </>
+        <hr className="progress__rule" />
+      </div>
+      <div className="chapter">
+        <h6>CURRENT CHAPTER</h6>
+        <h4>Chapter 16</h4>
+        <button type="button">UPDATE PROGRESS</button>
+      </div>
+    </article>
   );
 };
 export default Book;
